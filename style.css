@@ -270,9 +270,21 @@ svg.fill { fill: currentColor; stroke: none; }
 
 /* education */
 .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.edu-grid.courses { grid-template-columns: repeat(2, 1fr); }
 .edu-sub { font-size: 1.1rem; margin: 36px 0 16px; display: flex; align-items: center; gap: 12px; }
 .edu-sub::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.courses-box { padding: 4px 26px; }
+.course-list { list-style: none; }
+.course-list li { display: flex; align-items: center; gap: 18px; padding: 20px 0; }
+.course-list li + li { border-top: 1px solid var(--border); }
+.course-ico { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; flex: none; font-size: 1.3rem; background: color-mix(in srgb, var(--accent-2) 12%, transparent); border: 1px solid var(--border); }
+.course-text { flex: 1; }
+.course-text h3 { margin: 0 0 2px; font-size: 1.05rem; }
+.course-text .inst { margin: 0; }
+.course-list .grade { white-space: nowrap; }
+@media (max-width: 640px) {
+  .course-list li { flex-wrap: wrap; }
+  .course-list .grade { width: 100%; padding-left: 64px; }
+}
 .edu-card { padding: 26px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--border); position: relative; transition: transform 0.3s, border-color 0.3s; }
 .edu-card:hover { transform: translateY(-4px); border-color: var(--accent); }
 .edu-year { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); padding: 4px 10px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, transparent); }
