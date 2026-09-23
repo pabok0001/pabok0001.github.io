@@ -23,8 +23,13 @@ navLinks.querySelectorAll("a").forEach((a) =>
 const nav = document.getElementById("nav");
 const sections = document.querySelectorAll("main section[id]");
 const links = navLinks.querySelectorAll("a");
+const progress = document.getElementById("progress");
+const fabTop = document.getElementById("fabTop");
 function onScroll() {
   nav.classList.toggle("scrolled", window.scrollY > 20);
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+  fabTop.classList.toggle("show", window.scrollY > 600);
   let current = "";
   sections.forEach((s) => {
     if (window.scrollY >= s.offsetTop - 140) current = s.id;
@@ -37,9 +42,9 @@ onScroll();
 // ===== Typing effect =====
 const roles = [
   "Software QA Engineer",
+  "Test Automation Engineer",
   "API Testing Specialist",
   "Performance Tester",
-  "Automation Enthusiast",
   "Bug Hunter 🐞",
 ];
 const typedEl = document.getElementById("typed");
@@ -97,3 +102,50 @@ document.getElementById("contactForm").addEventListener("submit", (e) => {
 
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ===== Tool logos =====
+// Lowercase keys come from icons.js (Simple Icons); anything else gets a monogram badge.
+function logo(key) {
+  const d = window.ICONS && window.ICONS[key];
+  if (d) return `<span class="logo-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg></span>`;
+  const mono = key.replace(/[^A-Za-z]/g, "").slice(0, 2).toUpperCase();
+  return `<span class="logo-mono">${mono}</span>`;
+}
+const LABELS = {
+  apachejmeter: "JMeter", githubactions: "GitHub Actions", githubcopilot: "Copilot", webdriverio: "WebdriverIO",
+  robotframework: "Robot Framework", junit5: "JUnit 5", saucelabs: "Sauce Labs", burpsuite: "Burp Suite",
+  testrail: "TestRail", mysql: "MySQL", typescript: "TypeScript", javascript: "JavaScript", gitlab: "GitLab",
+  github: "GitHub", k6: "k6", pytest: "Pytest",
+};
+const label = (k) => LABELS[k] || k.charAt(0).toUpperCase() + k.slice(1);
+
+document.querySelectorAll(".tool-list[data-tools]").forEach((el) => {
+  el.innerHTML = el.dataset.tools
+    .split(",")
+    .map((t) => {
+      const [key, name] = t.split(":");
+      return `<span class="tool">${logo(key)}${name}</span>`;
+    })
+    .join("");
+});
+document.querySelectorAll(".marquee-track[data-logos]").forEach((el) => {
+  const items = el.dataset.logos.split(",").map((k) => `<span class="m-logo">${logo(k)}${label(k)}</span>`).join("");
+  el.innerHTML = items + items; // duplicated for a seamless loop
+});
+
+// ===== Code tabs =====
+document.querySelectorAll(".code-tabs button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".code-tabs button").forEach((b) => b.classList.toggle("active", b === btn));
+    document.querySelectorAll(".code[data-panel]").forEach((p) => p.classList.toggle("active", p.dataset.panel === btn.dataset.tab));
+  });
+});
+
+// ===== Card spotlight follows the mouse =====
+document.querySelectorAll(".t-card, .skill-card, .project-card, .edu-card, .auto-group, .stat").forEach((card) => {
+  card.addEventListener("pointermove", (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+});

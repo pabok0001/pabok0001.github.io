@@ -7,7 +7,8 @@ Built with plain HTML, CSS and JavaScript. No build step, no dependencies.
 ## Features
 - Dark / light theme toggle (remembered per browser)
 - Typing effect, animated counters, scroll reveal animations
-- Experience timeline, skills, projects, education and contact sections
+- Experience timeline, skills, test automation (with live code tabs), projects, education and contact sections
+- Tool logo marquees, scroll progress bar, back-to-top button
 - Downloadable CV
 - Fully responsive (mobile, tablet, desktop)
 
@@ -17,6 +18,7 @@ portfolio/
 ├── index.html
 ├── style.css
 ├── script.js
+├── icons.js        (tool logos from Simple Icons)
 └── assets/
     ├── pabok.jpeg
     └── Pabok_Datta_CV.pdf

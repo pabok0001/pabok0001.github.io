@@ -7,7 +7,9 @@
   <meta name="description" content="Pabok Datta, Software QA Engineer with 3+ years of experience in manual, API, performance and automation testing across ERP and healthcare platforms." />
   <meta property="og:title" content="Pabok Datta | Software QA Engineer" />
   <meta property="og:description" content="Manual, API, performance & automation testing. ERP and healthcare platforms." />
-  <meta property="og:image" content="assets/pabok.jpeg" />
+  <meta property="og:image" content="https://pabok0001.github.io/assets/pabok.jpeg" />
+  <meta property="og:url" content="https://pabok0001.github.io/" />
+  <meta name="theme-color" content="#070b16" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2322d3ee'/><text x='50' y='66' font-size='50' font-family='Arial' font-weight='700' text-anchor='middle' fill='%230b1120'>PD</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +19,7 @@
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
@@ -26,6 +29,7 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#automation">Automation</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
@@ -83,14 +87,6 @@
           <div class="photo-wrap">
             <div class="photo-ring"></div>
             <img src="assets/pabok.jpeg" alt="Pabok Datta" class="photo" />
-            <div class="float-card fc-1">
-              <span class="fc-icon ok">✓</span>
-              <div><strong>500+</strong><small>Test cases</small></div>
-            </div>
-            <div class="float-card fc-2">
-              <span class="fc-icon bug">🐞</span>
-              <div><strong>200+</strong><small>Critical bugs</small></div>
-            </div>
           </div>
         </div>
       </div>
@@ -99,9 +95,10 @@
       <div class="container">
         <div class="terminal reveal">
           <div class="term-bar"><span></span><span></span><span></span><em>qa-run.sh</em></div>
-          <pre class="term-body"><code><span class="t-dim">$</span> npx run-tests --suite=release
+          <pre class="term-body"><code><span class="t-dim">$</span> npx playwright test --project=release
 <span class="t-ok">✔</span> Functional ............ <span class="t-ok">passed</span>
 <span class="t-ok">✔</span> Regression ............ <span class="t-ok">passed</span>
+<span class="t-ok">✔</span> E2E (Playwright) ...... <span class="t-ok">passed</span>
 <span class="t-ok">✔</span> API (Postman/Newman) .. <span class="t-ok">passed</span>
 <span class="t-ok">✔</span> Load (JMeter, 100 VU) . <span class="t-ok">passed</span>
 <span class="t-accent">▶ Release approved. Ready for production.</span></code></pre>
@@ -160,6 +157,18 @@
               <div><small>Methodology</small><strong>Agile / Scrum</strong></div>
             </div>
           </div>
+        </div>
+
+        <div class="process reveal">
+          <h3 class="process-title">How I test</h3>
+          <ol class="process-steps">
+            <li><span class="ps-num">01</span><strong>Analyze</strong><small>Requirements, risks &amp; acceptance criteria</small></li>
+            <li><span class="ps-num">02</span><strong>Plan</strong><small>Test strategy, scope &amp; environments</small></li>
+            <li><span class="ps-num">03</span><strong>Design</strong><small>Test cases, data &amp; automation scripts</small></li>
+            <li><span class="ps-num">04</span><strong>Execute</strong><small>Manual, API, E2E &amp; load runs</small></li>
+            <li><span class="ps-num">05</span><strong>Report</strong><small>Defects in JIRA with clear repro steps</small></li>
+            <li><span class="ps-num">06</span><strong>Sign-off</strong><small>Regression, release &amp; monitoring</small></li>
+          </ol>
         </div>
       </div>
     </section>
@@ -254,22 +263,22 @@
           <div class="skill-card reveal">
             <div class="sk-icon">🔌</div>
             <h3>API Testing</h3>
-            <div class="chips"><span>RESTful APIs</span><span>Postman</span><span>Newman</span><span>REST Assured</span></div>
+            <div class="chips"><span>RESTful APIs</span><span>Postman</span><span>Newman</span><span>REST Assured</span><span>Swagger / OpenAPI</span><span>Playwright API</span></div>
           </div>
           <div class="skill-card reveal">
             <div class="sk-icon">⚡</div>
             <h3>Performance Testing</h3>
-            <div class="chips"><span>Load Testing</span><span>Stress Testing</span><span>Apache JMeter</span></div>
+            <div class="chips"><span>Load Testing</span><span>Stress Testing</span><span>Apache JMeter</span><span>k6</span><span>Grafana</span></div>
           </div>
           <div class="skill-card reveal">
             <div class="sk-icon">🤖</div>
             <h3>Automation Testing</h3>
-            <div class="chips"><span>Selenium WebDriver</span><span>Playwright (TS)</span><span>Cypress</span><span>Katalon Studio</span><span>TestNG</span></div>
+            <div class="chips"><span>Playwright (TS)</span><span>Selenium 4</span><span>Cypress</span><span>WebdriverIO</span><span>Katalon Studio</span><span>TestNG</span><span>Cucumber (BDD)</span></div>
           </div>
           <div class="skill-card reveal">
             <div class="sk-icon">📱</div>
             <h3>Mobile &amp; Cross-Platform</h3>
-            <div class="chips"><span>Appium</span><span>BrowserStack</span><span>Sauce Labs</span><span>Cross-browser</span></div>
+            <div class="chips"><span>Appium 2</span><span>BrowserStack</span><span>Sauce Labs</span><span>Cross-browser</span><span>Real Devices</span></div>
           </div>
           <div class="skill-card reveal">
             <div class="sk-icon">🛡️</div>
@@ -284,7 +293,7 @@
           <div class="skill-card reveal">
             <div class="sk-icon">💻</div>
             <h3>Programming &amp; CI/CD</h3>
-            <div class="chips"><span>Java (Basic)</span><span>JavaScript (Basic)</span><span>Git</span><span>GitHub</span><span>Jenkins</span><span>GitLab CI/CD</span></div>
+            <div class="chips"><span>Java (Basic)</span><span>JavaScript (Basic)</span><span>TypeScript</span><span>Git</span><span>GitHub Actions</span><span>Jenkins</span><span>GitLab CI/CD</span><span>Docker</span></div>
           </div>
           <div class="skill-card reveal">
             <div class="sk-icon">📋</div>
@@ -303,9 +312,122 @@
         </div>
 
         <div class="marquee reveal" aria-hidden="true">
-          <div class="marquee-track">
-            <span>Selenium</span><span>Playwright</span><span>Cypress</span><span>Postman</span><span>Newman</span><span>JMeter</span><span>Appium</span><span>BrowserStack</span><span>Burp Suite</span><span>TestRail</span><span>JIRA</span><span>Jenkins</span><span>Katalon</span><span>REST Assured</span><span>MySQL</span><span>Chrome DevTools</span>
-            <span>Selenium</span><span>Playwright</span><span>Cypress</span><span>Postman</span><span>Newman</span><span>JMeter</span><span>Appium</span><span>BrowserStack</span><span>Burp Suite</span><span>TestRail</span><span>JIRA</span><span>Jenkins</span><span>Katalon</span><span>REST Assured</span><span>MySQL</span><span>Chrome DevTools</span>
+          <div class="marquee-track" data-logos="selenium,Playwright,cypress,webdriverio,appium,postman,apachejmeter,k6,Katalon,cucumber,TestNG,junit5,jest,pytest,robotframework,puppeteer"></div>
+        </div>
+        <div class="marquee reverse reveal" aria-hidden="true">
+          <div class="marquee-track" data-logos="githubactions,jenkins,gitlab,docker,git,github,jira,testrail,trello,BrowserStack,saucelabs,burpsuite,swagger,mysql,grafana,typescript,javascript,Java,githubcopilot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AUTOMATION ============ -->
+    <section class="section" id="automation">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">04 · Test Automation</span>
+          <h2>Automate the repetitive, focus on the risky</h2>
+          <p class="section-sub">Frameworks, runners and pipelines I use to build fast, reliable and maintainable test suites.</p>
+        </div>
+
+        <div class="auto-grid">
+          <div class="auto-stack">
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#22d3ee"></span>Web / E2E Automation</h3>
+              <div class="tool-list" data-tools="Playwright:Playwright (TypeScript),selenium:Selenium WebDriver 4,cypress:Cypress,webdriverio:WebdriverIO,Katalon:Katalon Studio,puppeteer:Puppeteer"></div>
+            </div>
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#a78bfa"></span>API Automation</h3>
+              <div class="tool-list" data-tools="postman:Postman,postman:Newman CLI,Java:REST Assured,swagger:Swagger / OpenAPI,insomnia:Insomnia,Playwright:Playwright API"></div>
+            </div>
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#f472b6"></span>Mobile &amp; Performance</h3>
+              <div class="tool-list" data-tools="appium:Appium 2,BrowserStack:BrowserStack,saucelabs:Sauce Labs,apachejmeter:Apache JMeter,k6:Grafana k6,grafana:Grafana"></div>
+            </div>
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#34d399"></span>Runners, BDD &amp; Reporting</h3>
+              <div class="tool-list" data-tools="TestNG:TestNG,junit5:JUnit 5,jest:Jest,mocha:Mocha,vitest:Vitest,pytest:Pytest,cucumber:Cucumber (BDD),robotframework:Robot Framework,Allure:Allure Report"></div>
+            </div>
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#fbbf24"></span>CI/CD, DevOps &amp; AI</h3>
+              <div class="tool-list" data-tools="githubactions:GitHub Actions,jenkins:Jenkins,gitlab:GitLab CI/CD,docker:Docker,git:Git,githubcopilot:GitHub Copilot"></div>
+            </div>
+            <div class="auto-group reveal">
+              <h3><span class="ag-dot" style="--c:#60a5fa"></span>Practices</h3>
+              <div class="chips">
+                <span>Page Object Model</span><span>Data-driven Testing</span><span>BDD / Gherkin</span><span>Parallel Execution</span>
+                <span>Cross-browser Grid</span><span>API Contract Testing</span><span>Visual Regression</span><span>Test Reporting</span><span>Shift-left Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-window reveal">
+            <div class="code-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <div class="code-tabs" role="tablist">
+                <button class="active" data-tab="pw" role="tab">login.spec.ts</button>
+                <button data-tab="se" role="tab">LoginTest.java</button>
+                <button data-tab="api" role="tab">booking.test.js</button>
+                <button data-tab="k6" role="tab">load.js</button>
+              </div>
+            </div>
+<pre class="code active" data-panel="pw"><code><span class="k">import</span> { test, expect } <span class="k">from</span> <span class="s">'@playwright/test'</span>;
+<span class="k">import</span> { LoginPage } <span class="k">from</span> <span class="s">'../pages/LoginPage'</span>;
+
+test.<span class="f">describe</span>(<span class="s">'Login'</span>, () =&gt; {
+  <span class="f">test</span>(<span class="s">'valid user lands on dashboard'</span>, <span class="k">async</span> ({ page }) =&gt; {
+    <span class="k">const</span> login = <span class="k">new</span> <span class="f">LoginPage</span>(page);
+    <span class="k">await</span> login.<span class="f">goto</span>();
+    <span class="k">await</span> login.<span class="f">signIn</span>(<span class="s">'qa.user'</span>, process.env.PASS!);
+
+    <span class="k">await</span> <span class="f">expect</span>(page).<span class="f">toHaveURL</span>(<span class="s">/dashboard/</span>);
+    <span class="k">await</span> <span class="f">expect</span>(page.<span class="f">getByRole</span>(<span class="s">'heading'</span>))
+      .<span class="f">toContainText</span>(<span class="s">'Welcome'</span>);
+  });
+});</code></pre>
+<pre class="code" data-panel="se"><code><span class="k">public class</span> <span class="f">LoginTest</span> <span class="k">extends</span> <span class="f">BaseTest</span> {
+
+  <span class="c">@Test(dataProvider = "users")</span>
+  <span class="k">public void</span> <span class="f">loginWorks</span>(String user, String pass) {
+    driver.<span class="f">get</span>(baseUrl + <span class="s">"/login"</span>);
+    driver.<span class="f">findElement</span>(By.<span class="f">id</span>(<span class="s">"username"</span>)).<span class="f">sendKeys</span>(user);
+    driver.<span class="f">findElement</span>(By.<span class="f">id</span>(<span class="s">"password"</span>)).<span class="f">sendKeys</span>(pass);
+    driver.<span class="f">findElement</span>(By.<span class="f">cssSelector</span>(<span class="s">"button[type=submit]"</span>)).<span class="f">click</span>();
+
+    wait.<span class="f">until</span>(ExpectedConditions.<span class="f">urlContains</span>(<span class="s">"dashboard"</span>));
+    Assert.<span class="f">assertTrue</span>(dashboard.<span class="f">isLoaded</span>());
+  }
+}</code></pre>
+<pre class="code" data-panel="api"><code><span class="c">// Postman / Newman test script</span>
+pm.<span class="f">test</span>(<span class="s">"Status is 200"</span>, () =&gt; {
+  pm.response.to.have.<span class="f">status</span>(<span class="n">200</span>);
+});
+
+pm.<span class="f">test</span>(<span class="s">"Booking has valid schema"</span>, () =&gt; {
+  <span class="k">const</span> body = pm.response.<span class="f">json</span>();
+  pm.<span class="f">expect</span>(body).to.have.<span class="f">property</span>(<span class="s">"bookingid"</span>);
+  pm.<span class="f">expect</span>(body.booking.firstname).to.be.<span class="f">a</span>(<span class="s">"string"</span>);
+});
+
+pm.<span class="f">test</span>(<span class="s">"Responds under 800ms"</span>, () =&gt; {
+  pm.<span class="f">expect</span>(pm.response.responseTime).to.be.<span class="f">below</span>(<span class="n">800</span>);
+});</code></pre>
+<pre class="code" data-panel="k6"><code><span class="k">import</span> http <span class="k">from</span> <span class="s">'k6/http'</span>;
+<span class="k">import</span> { check, sleep } <span class="k">from</span> <span class="s">'k6'</span>;
+
+<span class="k">export const</span> options = {
+  stages: [
+    { duration: <span class="s">'1m'</span>, target: <span class="n">100</span> },  <span class="c">// ramp up</span>
+    { duration: <span class="s">'3m'</span>, target: <span class="n">100</span> },  <span class="c">// steady load</span>
+  ],
+  thresholds: { http_req_duration: [<span class="s">'p(95)&lt;500'</span>] },
+};
+
+<span class="k">export default function</span> () {
+  <span class="k">const</span> res = http.<span class="f">get</span>(<span class="s">'https://api.example.com/appointments'</span>);
+  <span class="f">check</span>(res, { <span class="s">'status 200'</span>: (r) =&gt; r.status === <span class="n">200</span> });
+  <span class="f">sleep</span>(<span class="n">1</span>);
+}</code></pre>
+            <div class="code-foot"><span class="t-ok">●</span> <span id="codeStatus">All checks passed</span> <span class="muted">· running in CI with GitHub Actions</span></div>
           </div>
         </div>
       </div>
@@ -315,7 +437,7 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">04 · Projects</span>
+          <span class="eyebrow">05 · Projects</span>
           <h2>Things I've built</h2>
         </div>
 
@@ -359,7 +481,7 @@
     <section class="section" id="education">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">05 · Education &amp; Training</span>
+          <span class="eyebrow">06 · Education &amp; Training</span>
           <h2>Learning never stops</h2>
         </div>
 
@@ -397,7 +519,7 @@
       <div class="container">
         <div class="contact-box reveal">
           <div class="contact-info">
-            <span class="eyebrow">06 · Contact</span>
+            <span class="eyebrow">07 · Contact</span>
             <h2>Let's build bug-free software together</h2>
             <p>Have a role, a project, or just want to talk testing? My inbox is always open.</p>
             <ul class="contact-list">
@@ -431,10 +553,19 @@
   <footer class="footer">
     <div class="container footer-inner">
       <p>© <span id="year"></span> Pabok Datta. Tested thoroughly, shipped with care.</p>
-      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/pabok001/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/pabok0001/pabok0001" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.facebook.com/share/1C1faL317c/" target="_blank" rel="noopener">Facebook</a>
+      </div>
     </div>
   </footer>
 
+  <a href="#home" class="fab-top" id="fabTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
+
+  <script src="icons.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
