@@ -122,7 +122,8 @@ svg.fill { fill: currentColor; stroke: none; }
 .btn.full { width: 100%; }
 
 /* ---------- hero ---------- */
-.hero { padding: 140px 0 60px; }
+.hero { padding: 140px 0 60px; overflow-x: clip; }
+main { overflow-x: clip; }
 .hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .badge {
   display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px;
@@ -148,7 +149,7 @@ svg.fill { fill: currentColor; stroke: none; }
 .socials a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
 
 .hero-visual { display: flex; justify-content: center; }
-.photo-wrap { position: relative; width: min(360px, 80vw); aspect-ratio: 1; }
+.photo-wrap { position: relative; width: min(360px, 72vw); aspect-ratio: 1; margin: 14px; }
 .photo-ring {
   position: absolute; inset: -14px; border-radius: 50%;
   background: conic-gradient(from 0deg, #22d3ee, #818cf8, #c084fc, #22d3ee);
@@ -539,4 +540,27 @@ svg.fill { fill: currentColor; stroke: none; }
   .t-groups { grid-template-columns: 1fr; }
   .t-group.wide ul { grid-template-columns: 1fr; }
   .t-metrics { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- mobile refinements ---------- */
+@media (max-width: 640px) {
+  /* 16px inputs stop iOS Safari from zooming in when a field is focused */
+  .contact-form input, .contact-form textarea { font-size: 16px; }
+  .term-body { font-size: 0.78rem; padding: 14px 16px; }
+  .t-group h4 { letter-spacing: 0.03em; line-height: 1.35; align-items: flex-start; }
+  .t-group h4 .tg-ico { margin-top: -3px; }
+  .t-head .date { font-size: 0.74rem; }
+  .code-tabs button { padding: 6px 8px; }
+  .hero-cta .btn { flex: 1 1 auto; }
+  .stat .label { font-size: 0.82rem; }
+  .btn { min-height: 44px; }        /* comfortable touch targets */
+  .socials a, .icon-btn { width: 44px; height: 44px; }
+}
+@media (max-width: 380px) {
+  .hero h1 { font-size: 2.15rem; }
+  .typed-line { font-size: 1.05rem; }
+  .stats-grid { gap: 12px; }
+  .stat { padding: 22px 14px; }
+  .t-metrics { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .process-steps { grid-template-columns: 1fr; }
 }
