@@ -193,10 +193,12 @@ svg.fill { fill: currentColor; stroke: none; }
 .section-head h2, .contact-info h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
 
 /* about */
-.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: stretch; }
+.about-head { margin-bottom: 28px; }
 .about-text p { color: var(--muted); margin-bottom: 18px; font-size: 1.05rem; }
+.about-text p:last-child { margin-bottom: 0; }
 .about-text strong { color: var(--text); }
-.about-cards { display: grid; gap: 14px; }
+.about-cards { display: grid; gap: 14px; grid-auto-rows: 1fr; }
 .info-card {
   display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 14px;
   background: var(--card); border: 1px solid var(--border); transition: transform 0.25s, border-color 0.25s;
