@@ -471,3 +471,24 @@ svg.fill { fill: currentColor; stroke: none; }
   .code { font-size: 0.72rem; padding: 16px; min-height: 0; }
   .footer-socials { justify-content: center; }
 }
+
+/* experience: featured role layout */
+.t-summary { color: var(--muted); font-size: 0.97rem; margin: -2px 0 18px; max-width: 820px; }
+.t-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px; }
+.t-metrics div {
+  padding: 14px 16px; border-radius: 12px; background: var(--bg-2); border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 2px;
+}
+.t-metrics strong { font-size: 1.45rem; font-weight: 800; line-height: 1.1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.t-metrics span { color: var(--muted); font-size: 0.8rem; }
+.t-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; }
+.t-group h4 {
+  display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text); margin-bottom: 10px;
+}
+.t-group h4::before { content: ""; width: 14px; height: 2px; border-radius: 2px; background: var(--accent); }
+.t-group ul { gap: 8px; }
+@media (max-width: 860px) {
+  .t-groups { grid-template-columns: 1fr; }
+  .t-metrics { grid-template-columns: repeat(2, 1fr); }
+}
