@@ -314,6 +314,15 @@ svg.fill { fill: currentColor; stroke: none; }
 }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
 .form-note { color: var(--muted); font-size: 0.78rem; text-align: center; }
+.honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form-status { display: none; font-size: 0.9rem; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--border); }
+.form-status.ok { display: block; color: var(--ok); background: color-mix(in srgb, var(--ok) 10%, transparent); border-color: color-mix(in srgb, var(--ok) 35%, transparent); }
+.form-status.error { display: block; color: #f87171; background: rgba(248, 113, 113, 0.1); border-color: rgba(248, 113, 113, 0.35); }
+.form-status a { text-decoration: underline; font-weight: 600; }
+.btn-spinner { display: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(11, 17, 32, 0.3); border-top-color: #0b1120; animation: spin 0.7s linear infinite; }
+.btn.loading .btn-spinner { display: inline-block; }
+.btn.loading .btn-label { opacity: 0.7; }
+.btn:disabled { cursor: wait; }
 
 /* footer */
 .footer { padding: 30px 0; border-top: 1px solid var(--border); }

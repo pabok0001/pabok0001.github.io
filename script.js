@@ -91,13 +91,61 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-// ===== Contact form: opens the visitor's mail app =====
-document.getElementById("contactForm").addEventListener("submit", (e) => {
+// ===== Contact form: sends via FormSubmit (no backend needed on GitHub Pages) =====
+const CONTACT_EMAIL = "pabok.datta.01@gmail.com";
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const sendBtn = document.getElementById("sendBtn");
+
+function setStatus(type, html) {
+  formStatus.className = "form-status " + type;
+  formStatus.innerHTML = html;
+}
+
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const f = e.target;
-  const subject = encodeURIComponent(`Portfolio contact from ${f.name.value}`);
-  const body = encodeURIComponent(`${f.message.value}\n\n${f.name.value}\n${f.email.value}`);
-  window.location.href = `mailto:pabok.datta.01@gmail.com?subject=${subject}&body=${body}`;
+  const name = f.name.value.trim();
+  const email = f.email.value.trim();
+  const message = f.message.value.trim();
+
+  if (!name || !email || !message) return setStatus("error", "Please fill in your name, email and message.");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setStatus("error", "That email address doesn't look right.");
+  if (f._honey.value) return; // bot
+
+  sendBtn.disabled = true;
+  sendBtn.classList.add("loading");
+  setStatus("", "");
+
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        _subject: `Portfolio contact from ${name}`,
+        _replyto: email,
+        _template: "table",
+        _captcha: "false",
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.success === "false" || data.success === false) throw new Error(data.message || "Request failed");
+
+    setStatus("ok", `✅ Thanks, ${name.split(" ")[0]}! Your message has been sent. I'll get back to you soon.`);
+    f.reset();
+  } catch (err) {
+    // Fallback: open Gmail with the message pre-filled so nothing is lost.
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n${name}\n${email}`);
+    const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}&su=${subject}&body=${body}`;
+    setStatus("error", `Couldn't send right now. <a href="${gmail}" target="_blank" rel="noopener">Send it via Gmail instead</a>.`);
+  } finally {
+    sendBtn.disabled = false;
+    sendBtn.classList.remove("loading");
+  }
 });
 
 // ===== Footer year =====

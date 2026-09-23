@@ -602,12 +602,17 @@ pm.<span class="f">test</span>(<span class="s">"Responds under 800ms"</span>, ()
             </ul>
           </div>
 
-          <form class="contact-form" id="contactForm">
-            <label>Your Name<input type="text" name="name" required placeholder="John Doe" /></label>
-            <label>Your Email<input type="email" name="email" required placeholder="john@example.com" /></label>
+          <form class="contact-form" id="contactForm" novalidate>
+            <label>Your Name<input type="text" name="name" required placeholder="John Doe" autocomplete="name" /></label>
+            <label>Your Email<input type="email" name="email" required placeholder="john@example.com" autocomplete="email" /></label>
             <label>Message<textarea name="message" rows="5" required placeholder="Hi Pabok, I'd like to talk about..."></textarea></label>
-            <button type="submit" class="btn btn-primary full">Send Message</button>
-            <small class="form-note">This opens your email app with the message filled in.</small>
+            <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button type="submit" class="btn btn-primary full" id="sendBtn">
+              <span class="btn-label">Send Message</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <small class="form-note">Your message goes straight to my inbox. I usually reply within a day.</small>
           </form>
         </div>
       </div>
