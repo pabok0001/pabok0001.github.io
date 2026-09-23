@@ -31,4 +31,4 @@ Open `index.html` in any browser.
 3. Under **Source**, choose **Deploy from a branch**, then select `main` and `/ (root)`.
 4. The site will be live at `https://<your-username>.github.io/<repo-name>/`.
 
-> Tip: name the repo `pabok01.github.io` to get the site at `https://pabok01.github.io/`.
+> Tip: name the repo `pabok0001.github.io` to get the site at `https://pabok0001.github.io/`.
